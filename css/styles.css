@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-image: url('../imagenes/bg-simplify-section-desktop.svg');
+}
 /*valores por defecto*/
 ul,li,a{
     list-style: none;
@@ -10,6 +13,11 @@ ul,li,a{
 }
 button{
     cursor: pointer;
+    color: white;
+    background: #F3603B;
+}
+button:hover{
+    opacity: 0.8;
 }
 /*fin valores por defecto*/
 
@@ -66,7 +74,7 @@ button{
     height: 44px;
     justify-content: center;
     align-items: center;
-    background: #F3603B;
+    
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
     border: none;
@@ -108,9 +116,7 @@ button{
 }
 
 
-.info-01{
-    display: flex;
-}
+
 .info-01 .contenido-info-01,.contenido-info-02,.contenido-info-03{
     display: flex;
     flex-direction: column;
@@ -121,7 +127,6 @@ button{
     align-items: center;
     align-self: flex-end;
     font-family: 'Be Vietnam';
-    font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 23px;
@@ -239,9 +244,10 @@ button{
     box-shadow: 0px 4px 8px rgba(243, 96, 59, 0.5);
     border-radius: 50px;
     border: none;
-    color: white;
 }
-
+.btn-card:hover{
+    background: #e67e65;
+}
 .card .card1,.card .card3{
     display: none ;
 }
@@ -283,7 +289,10 @@ button{
     color: #F3603B;
     font-weight: 700;
 }
-
+.info-pie button:hover{
+    opacity: 1;
+    color: #e48c76;
+}
 /*fin pie de pagina*/
 
 /*inicio footer*/
@@ -300,8 +309,9 @@ button{
     border: none;
     border-radius: 30px;
     padding: 15px 25px;
-    width: 70%;
+    width: 100%;
 }
+
 .footer .buscador button{
     display: flex;
     flex-direction: row;
@@ -317,7 +327,12 @@ button{
     color: white;
 
 }
-
+.footer .buscador button:hover{
+    background: #e4907b;
+}
+.buscador .input-span span{
+    display: none;
+}
 .footer .nav-footer{
     display: flex;
     justify-content: space-around;
@@ -329,7 +344,12 @@ button{
     font-family: 'Be Vietnam';
     color: white;
 }
-
+.footer .nav-footer ul li a:hover{
+    color:#F3603B;
+}
+.escritorio-copy{
+    display: none;
+}
 .redes{
     display: flex;
     justify-content: space-around;
@@ -337,7 +357,9 @@ button{
     font-size: 30px;
     padding: 0 25px;
 }
-
+.redes i:hover{
+    color: #F3603B;
+}
 .logo{
     display: flex;
     justify-content: center;
@@ -351,14 +373,15 @@ button{
 /*fin footer*/
 
 /*Media query*/
-@media(min-width:768px){
+
+
+@media screen and (min-width:1366px),(min-width:1440px){
+    .menu-header{
+        width: 85%;
+        margin: 30px auto;
+    }
     .burger{
         display: none;
-    }
-    /*navegacion*/
-    .navegacion{
-        display: flex;
-        justify-content: space-between;
     }
     .btn-nav{
         display: flex;
@@ -371,13 +394,196 @@ button{
         border-radius: 50px;
         border: none;
     }
+    .navegacion{
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .navegacion .items-nav{
         display: flex;
     }
     .navegacion .items-nav li{
-        padding: 0 5px;
+        padding: 0 10px;
         color: #242E52;
         font-family: 'Be Vietnam Pro', sans-serif;
+        font-size: 12px;
+    }
+    .navegacion .items-nav li a:hover{
+        color: #7e89ad;
+    }
+    .navegacion .items-nav li a{
+        font-size: 20px;
+        gap: 50px;
+    }
+    main{
+        width: 85%;
+        margin: 0 auto;
+    }
+    /*portada*/
+    .portada{
+        width: auto;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 80px;
+    }
+    .portada .contenido-portada{
+        width: 35%;
+        text-align: left;
+        align-items: flex-start;
+        
+    }
+    .portada .contenido-portada h3{
+        font-size: 50px;
+    }
+    .portada .contenido-portada p{
+        width: 80%;
+    }
+    /*contenido principal*/
+    .contenido-principal{
+        width: auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contenido-principal .titulo-principal{
+        margin: 0;
+        width: 50%;
+        text-align: left;
+        align-self: flex-start;
+    }
+    .contenido-principal .titulo-principal h3{
+        font-size: 40px;
+    }
+    .contenido-principal .titulo-principal p{
+        margin-top: 10px;
+        width: 70%;
+        align-self: flex-start;
+
+    }
+    .contenido-info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 70%;
+    }
+    .info-01{
+        width: 80%;
+    }
+    .info-01 .contenido-info-01,.info-01 .contenido-info-02,.info-01 .contenido-info-03{
+      margin-bottom: 20px;  
+    }
+    .info-01 .contenido-info-01 h4,.info-01 .contenido-info-02 h4,.info-01 .contenido-info-03 h4{
+        background-color: transparent;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .info-01 .contenido-info-01 p,.info-01 .contenido-info-02 p,.info-01 .contenido-info-03 p{
+         width: 100%; 
+        padding-left: 100px;
+        font-size: 17px;
+       
     }
 
+    .info-01 .contenido-info-01 h4::before,.info-01 .contenido-info-02 h4::before,.info-01 .contenido-info-03 h4::before{
+        margin-right: 26px;
+    } 
+
+    /*cards*/
+    .card{
+        width:100%;
+    }
+    .card-puntos{
+        display: none;
+    }
+    .card .card1,.card .card3{
+        display: flex;
+    }
+    .card .card-contenido{
+        width: 32%;
+    }
+    .card .comentarios{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+    }
+
+    /*info pie*/
+    .info-pie{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 80px 0;
+    }
+    .info-pie h2{
+        width: 37%;
+        text-align: left;
+    }
+  
+
+    /*footer*/
+    .footer{
+        display: flex;
+        justify-content: space-around;
+        padding: 0 30px;
+    }
+    .footer .buscador-escritorio,
+    .footer .nav-footer,
+    .footer .redes-logo{
+        padding: 30px 0;
+        margin: 0;
+    }
+    .footer .buscador-escritorio{
+        order: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .input-span{
+        display: flex;
+        flex-direction: column;
+    }
+    .input-span span{
+        padding-left: 15px;
+        padding-top:5px ;
+        color: red;
+    }
+    .footer .buscador input{
+        width: 100%;
+    }
+    .buscador .input-span span{
+        display: none;
+    }
+    .buscador .input-span input:invalid{
+        outline-color: red;
+        color: red;
+    }
+    .buscador .input-span input:invalid + span{
+        display: block;
+    }
+    .escritorio-copy{
+        display: block;
+        color: #8C8C94;
+        text-align: center;
+    }
+    .footer .nav-footer{
+        order: 2;
+        width: 40%;
+        gap: 70px;
+    }
+    .footer .redes-logo{
+        order: 1;
+        display: flex;
+       flex-direction: column-reverse;
+       justify-content: space-between;
+    }
+    .redes{
+        gap: 10px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .logo{
+        margin: 0;
+    }
+    .copy{
+        display: none;
+    }
 }
